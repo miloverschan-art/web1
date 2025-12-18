@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa & Usia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3e9ff;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: purple;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid #cda6ff;
+            outline: none;
+        }
+
+        button {
+            background: purple;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .hasil {
+            margin-top: 20px;
+            text-align: left;
+            color: purple;
+            font-size: 17px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Data Mahasiswa & Usia</h2>
+
+        <input type="text" id="nama" placeholder="Nama">
+        <input type="text" id="nim" placeholder="NIM">
+        <input type="number" id="tahun" placeholder="Tahun Lahir">
+
+        <button onclick="tampilkan()">Tampilkan</button>
+
+        <div class="hasil" id="output"></div>
+    </div>
+
+    <script>
+        function tampilkan() {
+            let nama = document.getElementById("nama").value;
+            let nim = document.getElementById("nim").value;
+            let tahun = document.getElementById("tahun").value;
+
+            let tahunSekarang = new Date().getFullYear();
+            let usia = tahunSekarang - tahun;
+
+            document.getElementById("output").innerHTML =
+                "Nama : " + nama + "<br>" +
+                "NIM : " + nim + "<br>" +
+                "Usia : " + usia + " tahun";
+        }
+    </script>
+
+</body>
+</html>
